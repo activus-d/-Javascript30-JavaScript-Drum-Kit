@@ -21,7 +21,7 @@ function playSoundClick( e ) {
         return
     } else{ 
         const drumClasses = e.target.classList //collects the classes contained inside of clicked target in an array
-        const drumTypeValue =  drumClasses[0]//selects the first string value in the array above which is the drum type class' text
+        const drumTypeValue =  drumClasses[0]//selects string value of the first class in the array above which is the drum type class' text
         const audio = document.querySelectorAll( `.${drumTypeValue}` )[1] //using the drum type text as a class argument to select asssociated audio to be played
         audio.currentTime = 0
         audio.play()
