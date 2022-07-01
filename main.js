@@ -1,6 +1,6 @@
 //add event listener to listen to keydown event
 //play sound associated with the data-key of each element
-//add transition to the keys by adding the class already designated for such in the stykesheet
+//add transition to the keys by adding the class already designated for such in the stylesheet
 //removed added features upon sound play ending
 
 window.addEventListener( 'keydown', playSound )
@@ -15,21 +15,21 @@ function playSound( e ) {
     keyButton.classList.add( 'playing' ) //adds the class playing to press key
 }
 
-window.addEventListener( 'click touchstart', playSoundClick )
-function playSoundClick( e ) {
-    if(!e.target.matches('.key')) { //if target clicked does not have the class "key" then do nothing
-        return
-    } else{ 
-        const drumClasses = e.target.classList //collects the classes contained inside of clicked target in an array
-        const drumTypeValue =  drumClasses[0]//selects string value of the first class in the array above which is the drum type class' text
-        const audio = document.querySelectorAll( `.${drumTypeValue}` )[1] //using the drum type text as a class argument to select asssociated audio to be played
-        audio.currentTime = 0
-        audio.play()
-        const button = document.querySelectorAll( `.${drumTypeValue}` )[0]
-        console.log(button)
-        button.classList.add('playing')
-    }
-}
+// window.addEventListener( 'click touchstart', playSoundClick )
+// function playSoundClick( e ) {
+//     if(!e.target.matches('.key')) { //if target clicked does not have the class "key" then do nothing
+//         return
+//     } else{ 
+//         const drumClasses = e.target.classList //collects the classes contained inside of clicked target in an array
+//         const drumTypeValue =  drumClasses[0]//selects string value of the first class in the array above which is the drum type class' text
+//         const audio = document.querySelectorAll( `.${drumTypeValue}` )[1] //using the drum type text as a class argument to select asssociated audio to be played
+//         audio.currentTime = 0
+//         audio.play()
+//         const button = document.querySelectorAll( `.${drumTypeValue}` )[0]
+//         console.log(button)
+//         button.classList.add('playing')
+//     }
+// }
 
 const keyButtons = document.querySelectorAll('.key')
 keyButtons.forEach( key => {
